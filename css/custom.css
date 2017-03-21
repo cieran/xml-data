@@ -1,0 +1,18 @@
+section{
+	width: 60%;
+	margin: 0 auto;
+}
+nav{
+	margin-bottom: 2%;
+}
+.title{
+	font-size: 24px;
+	text-align: center;
+}
+
+.u-full-width tbody{
+	color: dodgerblue;
+}
+.u-full-width thead{
+	color: #ebab76;
+}
