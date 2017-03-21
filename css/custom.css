@@ -4,10 +4,15 @@ section{
 }
 nav{
 	margin-bottom: 2%;
+	text-align: center;
+
 }
+
 .title{
 	font-size: 24px;
 	text-align: center;
+	margin-bottom: 2%;
+	margin-top: 1%;
 }
 
 .u-full-width tbody{
@@ -15,4 +20,17 @@ nav{
 }
 .u-full-width thead{
 	color: #ebab76;
+}
+
+.row{
+	display: inline-flex;
+}
+
+.search{
+	min-width: 240px;
+	padding-right: 10px;
+	margin-right: 2%;
+}
+.button-primary{
+	color: red;
 }

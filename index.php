@@ -1,12 +1,14 @@
 <?php
-  	$typeID = 317;
+  	if(isset($_POST['stopNum'])){
+  		$stopNum = $_POST['stopNum'];
+  	}else{
+  		$stopNum = 317;
+  	}
   	// 243831 Food Science UCC
   	// 317 Westmoreland Street
   	// 3980 Kingsbry
-	$url = 'https://data.dublinked.ie/cgi-bin/rtpi/realtimebusinformation?stopid='.$typeID.'&format=xml';
+	$url = 'https://data.dublinked.ie/cgi-bin/rtpi/realtimebusinformation?stopid='.$stopNum.'&format=xml';
 	$xmlstr = simplexml_load_file($url);
-
-
 	$stopId = $xmlstr->stopid;
 	$count = $xmlstr->numberofresults;
 ?>
@@ -23,7 +25,13 @@
 	</head>
 	<body>
 		<nav>
-		<h1 class="title"></h1>
+		<h1 class="title">Real Time Bus Information</h1>
+		<form action="/" method="POST">
+			<div class="row">
+				<input class="u-full-width search" type="text" placeholder="Stop Number.." name="stopNum" required>
+				<input class="button-primary" type="submit" value="Search">
+			</div>
+		</form>
 		</nav>
 		<section>
 		<p>Last Updated: <?= $xmlstr->timestamp ?> </p>
