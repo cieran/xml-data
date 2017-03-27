@@ -9,8 +9,6 @@
   	// 3980 Kingsbry
 	$url = 'https://data.dublinked.ie/cgi-bin/rtpi/realtimebusinformation?stopid='.$stopNum.'&format=xml';
 	$xmlstr = simplexml_load_file($url);
-	$stopId = $xmlstr->stopid;
-	$count = $xmlstr->numberofresults;
 ?>
 
 <html>
@@ -48,7 +46,7 @@
 		  	foreach($xmlstr->results->result as $result){
 		  		echo
 		  		"<tr>
-				  	<td>". $stopId ."</td>
+				  	<td>". $stopNum ."</td>
 					<td>". $result->route ."</td>
 				  	<td>". $result->origin ."</td>
 				    <td>". $result->destination ."</td>
